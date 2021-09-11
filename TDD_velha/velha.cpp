@@ -18,4 +18,32 @@ int VerificaVelha( int velha[3][3] )
 	return 0; /*!< retorna zero para teste */
 }
 
+int VerifyXwin( int xwin[3][3])
+{
+	int c,i,j;
+	for(i=0;i<3;i++){
+	for (c=0,j=0; j<3; j++){
+		if (xwin[i][j] != 1){
+			j=3;
+		}
+		if (xwin[i][j] == 1){
+			c++;
+
+		}
+		
+		
+
+	}
+		
+		
+		if (c == 3) {
+			return 1;
+		}
+
+		
+	}
+
+
+	return 0;
+}
 
