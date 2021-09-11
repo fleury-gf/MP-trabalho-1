@@ -21,9 +21,9 @@ TEST_CASE( "Testa velha" ) {
 }
 
 TEST_CASE( "Xwin" ) {
-	int test2[3][3]= {    { 1, 0, 1 }, 
-	                      { 2, 0, 2 },
-						  { 0, 2, 1 }
+	int test2[3][3]= {    { 2, 0, 2 }, 
+	                      { 0, 2, 1 },
+						  { 1, 1, 1 }
 					  };
     REQUIRE( VerifyXwin(test2) == 1 );
 
