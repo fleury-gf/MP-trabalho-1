@@ -70,3 +70,55 @@ int VerifyXwin( int xwin[3][3])
 	return 0;
 }
 
+
+int VerifyOwin( int owin[3][3])
+{
+	int c,i,j;  
+	for(i=0;i<3;i++){     /*line verifying loop*/
+	for (c=0,j=0; j<3; j++){
+		if (owin[i][j] != 2){
+			j=3;
+		}
+		if (owin[i][j] == 2){
+			c++;
+
+		}
+		
+		
+
+	}
+		
+		
+		if (c == 3) {
+			return 2;
+		}
+
+		
+	}
+
+	for(i=0;i<3;i++){       /*column verifying loop*/
+	for (c=0,j=0; j<3; j++){
+		if (owin[j][i] != 2){
+			j=3;
+		}
+		if (owin[j][i] == 2){
+			c++;
+
+		}
+		
+		
+
+	}
+		
+		
+		if (c == 3) {
+			return 2;
+		}
+
+		
+	}
+
+
+
+	return 0;
+}
