@@ -1,9 +1,9 @@
 all: velha.o testa_velha.cpp
-	g++ -std=c++11 -Wall -ftest-coverage -fprofile-arcs velha.o testa_velha.cpp -o testa_velha
+	g++ -std=c++11 -Wall -g -ftest-coverage -fprofile-arcs --coverage velha.o testa_velha.cpp -o testa_velha
 	
 
 velha.o : velha.cpp velha.hpp
-	g++ -std=c++11 -Wall -ftest-coverage -fprofile-arcs -c velha.cpp
+	g++ -std=c++11 -g -Wall -ftest-coverage -fprofile-arcs --coverage -c velha.cpp 
 	
 	
 	
@@ -27,7 +27,7 @@ valgrind:
 
 	
 cleangcov:
-	rm -rf *.gc*
+	rm -rf *.gc* 
 
 clean:
 	rm -rf *.o *.exe

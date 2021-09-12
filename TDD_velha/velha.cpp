@@ -35,11 +35,11 @@ int Verifywin(int win[3][3], int player)
 	{
 		return -2;
 	}
-	for (int i = 0; i < 2; i++)
+	/*for (int i = 0; i < 2; i++)
 	{
 		VerifyDiagonal(win, player, i);
 	}
-
+*/
 	return 0;
 }
 
@@ -74,9 +74,9 @@ int VerifySet(int win[3][3], int player, int r_or_c)
 int VerifyDiagonal(int win[3][3], int player, int diagonal)
 {
 
-	if (win[1][1] == 1)
+	if (win[1][1] == player)
 	{ //middle space condition
-		for (int c, i = 0; i < 3; i += 2)
+		for (int c = 0, i = 0; i < 3; i += 2)
 		{
 
 			int column = diagonal ? i : 2 - i;

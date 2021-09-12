@@ -69,3 +69,28 @@ TEST_CASE("diagonal x win")
 	REQUIRE(VerifyDiagonal(test8, 1, 1) == 1);
 	REQUIRE(VerifyDiagonal(test8, 1, 0) == 1);
 }
+
+TEST_CASE("diagonal o win")
+{
+	int test8[3][3] = {{2, 1, 2},
+					   {1, 2, 1},
+					   {2, 1, 2}};
+	REQUIRE(VerifyDiagonal(test8, 2, 1) == 2);
+	REQUIRE(VerifyDiagonal(test8, 2, 0) == 2);
+}
+
+TEST_CASE("diagonal fail")
+{
+	int test9[3][3] = {{2, 1, 2},
+					   {1, 2, 1},
+					   {1, 2, 1}};
+	REQUIRE(VerifyDiagonal(test9, 2, 1) == -1);
+}
+
+TEST_CASE("diagonal fail if")
+{
+	int test10[3][3] = {{2, 1, 2},
+						{1, 0, 1},
+						{1, 2, 1}};
+	REQUIRE(VerifyDiagonal(test10, 2, 1) == -1);
+}
