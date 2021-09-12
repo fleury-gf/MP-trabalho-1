@@ -21,10 +21,10 @@ int VerificaVelha(int velha[3][3])
 		auto result = Verifywin(velha, i);
 		sum_result += result;
 		if (sum_result > 2)
-			return -2;
+			return -2; // impossible game (both players win)
 	}
 
-	return 0; /*!< retorna zero para teste */
+	return 0; /* game is a draw */
 }
 
 int Verifywin(int win[3][3], int player)
@@ -97,4 +97,17 @@ int VerifyDiagonal(int win[3][3], int player, int diagonal)
 	}
 
 	return -1;
+}
+
+int VerifyCompletion(int comp[3][3])
+{
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			if (comp[i][j] == 0)
+				return -1;
+		}
+	}
+	return 0;
 }

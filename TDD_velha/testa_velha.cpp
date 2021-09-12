@@ -102,3 +102,19 @@ TEST_CASE("impossible game double win")
 						{2, 0, 1}};
 	REQUIRE(VerificaVelha(test11) == -2);
 }
+
+TEST_CASE("completion test")
+{
+	int test12[3][3] = {{1, 0, 1},
+						{2, 0, 2},
+						{2, 0, 1}};
+	REQUIRE(VerifyCompletion(test12) == -1);
+}
+
+TEST_CASE("completion test case2")
+{
+	int test13[3][3] = {{1, 2, 1},
+						{2, 1, 2},
+						{2, 1, 1}};
+	REQUIRE(VerifyCompletion(test13) == 0);
+}
