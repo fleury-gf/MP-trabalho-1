@@ -14,9 +14,14 @@
 
 int VerificaVelha(int velha[3][3])
 {
+	int sum_result = 0;
 	for (int i = 1; i < 3; i++)
 	{
-		Verifywin(velha, i);
+
+		auto result = Verifywin(velha, i);
+		sum_result += result;
+		if (sum_result > 2)
+			return -2;
 	}
 
 	return 0; /*!< retorna zero para teste */
@@ -25,22 +30,22 @@ int VerificaVelha(int velha[3][3])
 int Verifywin(int win[3][3], int player)
 {
 
-	int winner, sum_result = 0;
+	int winner;
 	for (int i = 0; i < 2; i++)
 	{
-		auto resultrc = VerifySet(win, player, i);
-		sum_result += resultrc;
+		winner = VerifySet(win, player, i);
+		if (winner > 0)
+			return winner;
 	}
-	if (sum_result > 2)
+
+	for (int i = 0; i < 2; i++)
 	{
-		return -2;
+		winner = VerifyDiagonal(win, player, i);
+		if (0 < winner)
+			return winner;
 	}
-	/*for (int i = 0; i < 2; i++)
-	{
-		VerifyDiagonal(win, player, i);
-	}
-*/
-	return 0;
+
+	return -1;
 }
 
 int VerifySet(int win[3][3], int player, int r_or_c)

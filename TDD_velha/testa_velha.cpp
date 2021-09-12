@@ -94,3 +94,11 @@ TEST_CASE("diagonal fail if")
 						{1, 2, 1}};
 	REQUIRE(VerifyDiagonal(test10, 2, 1) == -1);
 }
+
+TEST_CASE("impossible game double win")
+{
+	int test11[3][3] = {{1, 1, 1},
+						{2, 2, 2},
+						{2, 0, 1}};
+	REQUIRE(VerificaVelha(test11) == -2);
+}
