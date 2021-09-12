@@ -7,35 +7,19 @@
 
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
-  
 
-
-TEST_CASE( "Testa velha" ) {
-	int teste1[3][3]= {   { 2, 0, 1 }, 
-	                      { 2, 0, 1 },
-						  { 0, 2, 1 }
-					  };
-    REQUIRE( VerificaVelha(teste1) == 1 );
-
-
+TEST_CASE("Testa velha")
+{
+	int teste1[3][3] = {{2, 0, 1},
+						{2, 0, 1},
+						{0, 2, 1}};
+	REQUIRE(VerificaVelha(teste1) == 1);
 }
 
-TEST_CASE( "Xwin" ) {
-	int test2[3][3]= {    { 2, 2, 1 }, 
-	                      { 0, 0, 0},
-						  { 2, 0, 1 }
-					  };
-    REQUIRE( VerifyXwin(test2) == 1 );
-
-
-}
-
-TEST_CASE( "Owin" ) {
-	int test3[3][3]= {    { 2, 1, 1}, 
-	                      { 1, 0, 1},
-						  { 2, 2, 2 }
-					  };
-    REQUIRE( VerifyOwin(test3) == 2 );
-
-
+TEST_CASE("win")
+{
+	int test2[3][3] = {{2, 2, 1},
+					   {0, 0, 0},
+					   {2, 0, 1}};
+	REQUIRE(Verifywin(test2) == 1);
 }
