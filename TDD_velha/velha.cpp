@@ -3,6 +3,7 @@
  */
 
 #include "velha.hpp"
+#include <math.h>
 
 /** 
  * @brief verifica situacao do jogo da velha  
@@ -14,6 +15,10 @@
 
 int VerificaVelha(int velha[3][3])
 {
+	int impossible = VerifyImpossible(velha); //verifies if difference beetween number of turns is more than 1
+	if (impossible == -2)
+		return -2; //impossible game (uneven number of turns breaks the rules)
+
 	int sum_result = 0;
 	for (int i = 1; i < 3; i++)
 	{
@@ -24,7 +29,8 @@ int VerificaVelha(int velha[3][3])
 			return -2; // impossible game (both players win)
 	}
 
-	return 0; /* game is a draw */
+	int result = VerifyCompletion(velha);
+	return result; //returns -1 if the game is unfinished,0 if it is a draw
 }
 
 int Verifywin(int win[3][3], int player)
@@ -110,4 +116,23 @@ int VerifyCompletion(int comp[3][3])
 		}
 	}
 	return 0;
+}
+
+int VerifyImpossible(int imp[3][3])
+{
+	int xcount = 0, ocount = 0;
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			if (imp[i][j] == 1)
+				xcount++;
+			if (imp[i][j] == 2)
+				ocount++;
+		}
+	}
+	if (abs(xcount - ocount) < 1)
+		return -2;
+
+	return -1;
 }
