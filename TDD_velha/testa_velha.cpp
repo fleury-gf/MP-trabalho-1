@@ -10,10 +10,27 @@
 
 TEST_CASE("Testa velha")
 {
-	int teste1[3][3] = {{2, 0, 1},
-						{2, 0, 1},
-						{0, 2, 1}};
-	REQUIRE(VerificaVelha(teste1) == -1);
+	int testindef[3][3] = {{2, 0, 1},
+						   {2, 0, 0},
+						   {0, 2, 1}};
+	int testxwin[3][3] = {{2, 0, 2},
+						  {1, 1, 1},
+						  {0, 2, 0}};
+	int testowin[3][3] = {{2, 0, 1},
+						  {2, 0, 0},
+						  {2, 1, 1}};
+	int testimp[3][3] = {{2, 2, 1},
+						 {2, 2, 0},
+						 {0, 2, 1}};
+	int testdraw[3][3] = {{2, 1, 1},
+						  {1, 1, 2},
+						  {2, 2, 1}};
+
+	REQUIRE(VerificaVelha(testindef) == -1);
+	REQUIRE(VerificaVelha(testxwin) == 1);
+	REQUIRE(VerificaVelha(testowin) == 2);
+	REQUIRE(VerificaVelha(testimp) == -2);
+	REQUIRE(VerificaVelha(testdraw) == 0);
 }
 
 TEST_CASE("x row win")
@@ -127,6 +144,10 @@ TEST_CASE("impossible game x")
 	int test15[3][3] = {{1, 0, 1},
 						{0, 0, 2},
 						{0, 2, 0}};
+	int test16[3][3] = {{2, 2, 2},
+						{2, 1, 2},
+						{1, 2, 2}};
 	REQUIRE(VerifyImpossible(test14) == -2);
 	REQUIRE(VerifyImpossible(test15) == -1);
+	REQUIRE(VerifyImpossible(test16) == -2);
 }

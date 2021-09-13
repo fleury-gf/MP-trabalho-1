@@ -15,20 +15,26 @@
 
 int VerificaVelha(int velha[3][3])
 {
+	int winner, xwin;
 	int impossible = VerifyImpossible(velha); //verifies if difference beetween number of turns is more than 1
 	if (impossible == -2)
 		return -2; //impossible game (uneven number of turns breaks the rules)
 
-	int sum_result = 0;
+	int sum_winner = 0;
 	for (int i = 1; i < 3; i++)
 	{
 
-		auto result = Verifywin(velha, i);
-		sum_result += result;
-		if (sum_result > 2)
+		winner = Verifywin(velha, i);
+		if (winner == 1)
+			xwin = 1;
+		sum_winner += winner;
+		if (sum_winner > 2)
 			return -2; // impossible game (both players win)
 	}
-
+	if (xwin == 1)
+		return 1;
+	if (winner == 2)
+		return winner;
 	int result = VerifyCompletion(velha);
 	return result; //returns -1 if the game is unfinished,0 if it is a draw
 }
