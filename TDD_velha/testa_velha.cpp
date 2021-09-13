@@ -13,7 +13,7 @@ TEST_CASE("Testa velha")
 	int teste1[3][3] = {{2, 0, 1},
 						{2, 0, 1},
 						{0, 2, 1}};
-	REQUIRE(VerificaVelha(teste1) == 0);
+	REQUIRE(VerificaVelha(teste1) == -1);
 }
 
 TEST_CASE("x row win")
@@ -117,4 +117,16 @@ TEST_CASE("completion test case2")
 						{2, 1, 2},
 						{2, 1, 1}};
 	REQUIRE(VerifyCompletion(test13) == 0);
+}
+
+TEST_CASE("impossible game x")
+{
+	int test14[3][3] = {{1, 1, 1},
+						{1, 1, 2},
+						{2, 1, 1}};
+	int test15[3][3] = {{1, 0, 1},
+						{0, 0, 2},
+						{0, 2, 0}};
+	REQUIRE(VerifyImpossible(test14) == -2);
+	REQUIRE(VerifyImpossible(test15) == -1);
 }

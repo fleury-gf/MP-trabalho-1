@@ -131,7 +131,7 @@ int VerifyImpossible(int imp[3][3])
 				ocount++;
 		}
 	}
-	if (abs(xcount - ocount) < 1)
+	if (abs(xcount - ocount) > 1)
 		return -2;
 
 	return -1;
