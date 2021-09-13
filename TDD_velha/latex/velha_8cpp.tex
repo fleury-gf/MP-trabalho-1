@@ -1,0 +1,141 @@
+\hypertarget{velha_8cpp}{}\doxysection{velha.\+cpp File Reference}
+\label{velha_8cpp}\index{velha.cpp@{velha.cpp}}
+{\ttfamily \#include \char`\"{}velha.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{velha_8cpp_a9a79eba727abd2979d43ec648ed428e9}{Verifica\+Velha}} (int velha\mbox{[}3\mbox{]}\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em verifies the situation of a tic tac toe board \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{velha_8cpp_aa5ba953ec7338d2511431fca11373e92}{Verifywin}} (int win\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}, int player)
+\begin{DoxyCompactList}\small\item\em verifies the winner, if there is one \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{velha_8cpp_a5fe93932107bd1bb7694418a822467e8}{Verify\+Set}} (int win\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}, int player, int r\+\_\+or\+\_\+c)
+\begin{DoxyCompactList}\small\item\em verifies the winner on rows and columns \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{velha_8cpp_a60b7901142b0108661053c2ee4c1e903}{Verify\+Diagonal}} (int win\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}, int player, int diagonal)
+\begin{DoxyCompactList}\small\item\em verifies the winner on diagonals \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{velha_8cpp_aa05d1a7c94323d0f3b244eeb89d0ca97}{Verify\+Completion}} (int comp\mbox{[}3\mbox{]}\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em verifies if there is any zero on the board \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{velha_8cpp_aa59f3c44308ce9a71457da60a724923d}{Verify\+Impossible}} (int imp\mbox{[}3\mbox{]}\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em verifies impossibility by uneven number of turns \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{velha_8cpp_a9a79eba727abd2979d43ec648ed428e9}\label{velha_8cpp_a9a79eba727abd2979d43ec648ed428e9}} 
+\index{velha.cpp@{velha.cpp}!VerificaVelha@{VerificaVelha}}
+\index{VerificaVelha@{VerificaVelha}!velha.cpp@{velha.cpp}}
+\doxysubsubsection{\texorpdfstring{VerificaVelha()}{VerificaVelha()}}
+{\footnotesize\ttfamily int Verifica\+Velha (\begin{DoxyParamCaption}\item[{int}]{velha\mbox{[}3\mbox{]}\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+verifies the situation of a tic tac toe board 
+
+\begin{DoxyAuthor}{Author}
+Guilherme Fleury Franco 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em velha} & 3x3 matrix, 1 represents X, 2 represents O and zero represents a blank space\\
+\hline
+\end{DoxyParams}
+recieves a matrix representing a tic tac toe board and returns the winner, if there is one, if the game is a draw, if the game is unfinished or if the board is impossible \mbox{\Hypertarget{velha_8cpp_aa05d1a7c94323d0f3b244eeb89d0ca97}\label{velha_8cpp_aa05d1a7c94323d0f3b244eeb89d0ca97}} 
+\index{velha.cpp@{velha.cpp}!VerifyCompletion@{VerifyCompletion}}
+\index{VerifyCompletion@{VerifyCompletion}!velha.cpp@{velha.cpp}}
+\doxysubsubsection{\texorpdfstring{VerifyCompletion()}{VerifyCompletion()}}
+{\footnotesize\ttfamily int Verify\+Completion (\begin{DoxyParamCaption}\item[{int}]{comp\mbox{[}3\mbox{]}\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+verifies if there is any zero on the board 
+
+\begin{DoxyAuthor}{Author}
+Guilherme Fleury Franco 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em comp} & 3x3 matrix, 1 represents X, 2 represents O and zero represents a blank space\\
+\hline
+\end{DoxyParams}
+recieves a matrix representing a tic tac toe board and checks if there is any zero \mbox{\Hypertarget{velha_8cpp_a60b7901142b0108661053c2ee4c1e903}\label{velha_8cpp_a60b7901142b0108661053c2ee4c1e903}} 
+\index{velha.cpp@{velha.cpp}!VerifyDiagonal@{VerifyDiagonal}}
+\index{VerifyDiagonal@{VerifyDiagonal}!velha.cpp@{velha.cpp}}
+\doxysubsubsection{\texorpdfstring{VerifyDiagonal()}{VerifyDiagonal()}}
+{\footnotesize\ttfamily int Verify\+Diagonal (\begin{DoxyParamCaption}\item[{int}]{win\mbox{[}3\mbox{]}\mbox{[}3\mbox{]},  }\item[{int}]{player,  }\item[{int}]{diagonal }\end{DoxyParamCaption})}
+
+
+
+verifies the winner on diagonals 
+
+\begin{DoxyAuthor}{Author}
+Guilherme Fleury Franco 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em win} & 3x3 matrix, 1 represents X, 2 represents O and zero represents a blank space player \\
+\hline
+{\em player} & indicates if the function is checking player 1 or player 2 win \\
+\hline
+{\em diagonal} & indicates if the function is checking main or secondary diagonal\\
+\hline
+\end{DoxyParams}
+recieves a matrix representing a tic tac toe board and checks the diagonals for a winner \mbox{\Hypertarget{velha_8cpp_aa59f3c44308ce9a71457da60a724923d}\label{velha_8cpp_aa59f3c44308ce9a71457da60a724923d}} 
+\index{velha.cpp@{velha.cpp}!VerifyImpossible@{VerifyImpossible}}
+\index{VerifyImpossible@{VerifyImpossible}!velha.cpp@{velha.cpp}}
+\doxysubsubsection{\texorpdfstring{VerifyImpossible()}{VerifyImpossible()}}
+{\footnotesize\ttfamily int Verify\+Impossible (\begin{DoxyParamCaption}\item[{int}]{imp\mbox{[}3\mbox{]}\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+verifies impossibility by uneven number of turns 
+
+\begin{DoxyAuthor}{Author}
+Guilherme Fleury Franco 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em comp} & 3x3 matrix, 1 represents X, 2 represents O and zero represents a blank space\\
+\hline
+\end{DoxyParams}
+recieves a matrix representing a tic tac toe board and checks if the difference beetween the number of turns of each player is more than 1 \mbox{\Hypertarget{velha_8cpp_a5fe93932107bd1bb7694418a822467e8}\label{velha_8cpp_a5fe93932107bd1bb7694418a822467e8}} 
+\index{velha.cpp@{velha.cpp}!VerifySet@{VerifySet}}
+\index{VerifySet@{VerifySet}!velha.cpp@{velha.cpp}}
+\doxysubsubsection{\texorpdfstring{VerifySet()}{VerifySet()}}
+{\footnotesize\ttfamily int Verify\+Set (\begin{DoxyParamCaption}\item[{int}]{win\mbox{[}3\mbox{]}\mbox{[}3\mbox{]},  }\item[{int}]{player,  }\item[{int}]{r\+\_\+or\+\_\+c }\end{DoxyParamCaption})}
+
+
+
+verifies the winner on rows and columns 
+
+\begin{DoxyAuthor}{Author}
+Guilherme Fleury Franco 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em win} & 3x3 matrix, 1 represents X, 2 represents O and zero represents a blank space player \\
+\hline
+{\em player} & indicates if the function is checking player 1 or player 2 win \\
+\hline
+{\em r\+\_\+or\+\_\+c} & indicates if the function is checking row or column\\
+\hline
+\end{DoxyParams}
+recieves a matrix representing a tic tac toe board and checks the rows and columns for a winner \mbox{\Hypertarget{velha_8cpp_aa5ba953ec7338d2511431fca11373e92}\label{velha_8cpp_aa5ba953ec7338d2511431fca11373e92}} 
+\index{velha.cpp@{velha.cpp}!Verifywin@{Verifywin}}
+\index{Verifywin@{Verifywin}!velha.cpp@{velha.cpp}}
+\doxysubsubsection{\texorpdfstring{Verifywin()}{Verifywin()}}
+{\footnotesize\ttfamily int Verifywin (\begin{DoxyParamCaption}\item[{int}]{win\mbox{[}3\mbox{]}\mbox{[}3\mbox{]},  }\item[{int}]{player }\end{DoxyParamCaption})}
+
+
+
+verifies the winner, if there is one 
+
+\begin{DoxyAuthor}{Author}
+Guilherme Fleury Franco 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em win} & 3x3 matrix, 1 represents X, 2 represents O and zero represents a blank space player \\
+\hline
+{\em player} & indicates if the function is checking player 1 or player 2 win\\
+\hline
+\end{DoxyParams}
+recieves a matrix representing a tic tac toe board and checks the rows, columns and diagonals for a winner. 

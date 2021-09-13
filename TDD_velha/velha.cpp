@@ -15,7 +15,7 @@
 
 int VerificaVelha(int velha[3][3])
 {
-	int winner, xwin;
+	int winner = 0, xwin = 0;
 	int impossible = VerifyImpossible(velha); //verifies if difference beetween number of turns is more than 1
 	if (impossible == -2)
 		return -2; //impossible game (uneven number of turns breaks the rules)
